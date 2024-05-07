@@ -1,5 +1,6 @@
 GET http://localhost:3000/api/peliculas
 
+
 ###
 
 GET http://localhost:3000/api/peliculas?s=Dun
@@ -14,14 +15,30 @@ POST http://localhost:3000/api/peliculas
 Content-Type: application/json
 
 {
-    "titulo": "Película de prueba",
-    "sinopsis": "Sinopsis de prueba.",
-    "anio": 2024
+    "titulo": "Civil War",
+    "sinopsis": "En un futuro distópico, los EE. UU. están en guerra civil debido a un movimiento secesionista. Un equipo de periodistas acompaña a unos militares a Washington D.C. mientras las fuerzas californianas y texanas intentan conquistar la capital.",
+    "anio": 2024,
+    "poster": "https://www.filmaffinity.com/mx/film975245.html"
+
+    
 }
+###
+
+POST http://localhost:3000/api/peliculas
+Content-Type: application/json
+
+{
+    "titulo": "Oppenheimer",
+    "sinopsis": "Durante la Segunda Guerra Mundial, el teniente general Leslie Groves designa al físico J. Robert Oppenheimer para un grupo de trabajo que está desarrollando el Proyecto Manhattan, cuyo objetivo consiste en fabricar la primera bomba atómica.",
+    "anio": 2023,
+    "poster": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com.mx%2FOppenheimer-2023-P%25C3%25B3ster-pel%25C3%25ADcula-pulgadas%2Fdp%2FB0C819CWYV&psig=AOvVaw0SROeTIguyWOQVwCSU13d6&ust=1715184959939000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJi25oP4-4UDFQAAAAAdAAAAABAE"
+    
+}
+
 
 ###
 
-PUT http://localhost:3000/api/peliculas/19
+PUT http://localhost:3000/api/peliculas/18
 Content-Type: application/json
 
 {
@@ -30,8 +47,8 @@ Content-Type: application/json
     "sinopsis": "Un meteorito mágico aterriza en Adventure City y otorga superpoderes a los cachorros de PAW Patrol, convirtiéndolos en The Mighty Pups.",
     "anio": 2024,
     "poster": "https://m.media-amazon.com/images/M/MV5BMGI4NTNlODItMGJlZi00OTIwLTlkM2ItMWFkZjJhZDIzMDc3XkEyXkFqcGdeQXVyMTEyNzQ1MTk0._V1_SX300.jpg"
-}
 
+}
 ###
 
 POST http://localhost:3000/api/peliculas/19/categoria
@@ -52,4 +69,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/api/peliculas/19
+DELETE http://localhost:3000/api/peliculas/15

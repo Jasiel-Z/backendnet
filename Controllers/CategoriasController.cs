@@ -25,12 +25,13 @@ public class CategoriasController(DataContext context): Controller{
 
     //POST categorias
     [HttpPost]
-    public async Task<IActionResult> PostCategoria(CategoriaDTO categoriaDTO){
+    public async Task<ActionResult<Categoria>> PostCategoria(CategoriaDTO categoriaDTO){
         Categoria categoria = new(){
             Nombre = categoriaDTO.Nombre,
         };
         context.Categoria.Add(categoria);
         await context.SaveChangesAsync(); 
+        
         return CreatedAtAction(nameof(GetCategoria), new {id = categoria.CategoriaId}, categoria);
     }
 
@@ -39,7 +40,7 @@ public class CategoriasController(DataContext context): Controller{
     public async Task<IActionResult> PutCategoria(int idCategoria, CategoriaDTO categoriaDTO){
         if(idCategoria != categoriaDTO.CategoriaId) return BadRequest();
         var cat = await context.Categoria.FindAsync(idCategoria);
-        if(cat == null) return BadRequest();
+        if(cat == null) return NotFound();
 
         cat.Nombre = categoriaDTO.Nombre;
         await context.SaveChangesAsync();
